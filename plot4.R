@@ -68,11 +68,13 @@ plot(time,Global_active_power,type="l",ylab="Global active power",xlab ="")
 plot(time,Voltage,type="l",ylab="Voltage",xlab ="datetime")
 
 # Now plot Sub metering versus time, with different colors and a legend
+# !!!! note that this time there is no box around the legend, so an extra
+# option is invoked  bty="n"
 
 plot(time,as.numeric(as.character(sm1)),type="l",col="black",xlab="",ylab="Energy sub metering")
 lines(time,as.numeric(as.character(sm2)),type="l",col="red")
 lines(time,as.numeric(as.character(sm3)),type="l",col="blue")
-legend("topright",c("Sub_metering_1","Sub_metering_1","Sub_metering_3"),lty=c(1,1,1),col=c("black","red","blue"))
+legend("topright",c("Sub_metering_1","Sub_metering_1","Sub_metering_3"),bty="n",lty=c(1,1,1),col=c("black","red","blue"))
 
 
 # Plot Global_reactive_power as a function of time
